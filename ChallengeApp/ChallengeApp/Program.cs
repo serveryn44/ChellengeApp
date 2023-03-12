@@ -24,7 +24,10 @@ else if (age > 33 && gender == 'F')
 {
     Console.WriteLine("Nieznana Kobieta po 30-tce");
 }
-
+else
+{
+    Console.WriteLine(name + age + gender);
+}
 
 
 
