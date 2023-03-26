@@ -10,17 +10,17 @@ employee1.AddScore(0);
 employee1.AddScore(3);
 employee1.AddScore(3);
 employee1.AddScore(0);
-employee1.AddScore(3);
+employee1.AddScore(-3);
 
 employee2.AddScore(1);
 employee2.AddScore(1);
-employee2.AddScore(20);
+employee2.AddScore(2);
 employee2.AddScore(1);
 employee2.AddScore(1);
 
 employee3.AddScore(4);
 employee3.AddScore(4);
-employee3.AddScore(77);
+employee3.AddScore(-3);
 employee3.AddScore(4);
 employee3.AddScore(4);
 

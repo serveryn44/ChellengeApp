@@ -28,8 +28,9 @@ namespace ChallengeApp
         public int Result => score.Sum();
 
         public void AddScore(int number)
+            
 
-        { score.Add(number); }
+        { score.Add(number);  }
 
     }
 
