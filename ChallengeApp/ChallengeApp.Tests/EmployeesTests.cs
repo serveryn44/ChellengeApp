@@ -12,7 +12,7 @@ namespace ChallengeApp.Tests
             var employee = new Employee("Adam", "Kowalski", 55);
             employee.AddScore(5);
             employee.AddScore(6);
-            employee.AddScore(-5);
+            employee.AddBadScore(5);
             
             
             var result = employee.Result;

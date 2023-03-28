@@ -6,23 +6,23 @@ Employee employee2 = new Employee("Zuzia", "Nowak", 45);
 Employee employee3 = new Employee("Damian", "Iksiński", 22);
 
 
-employee1.AddScore(0);
+employee1.AddScore(1);
 employee1.AddScore(3);
 employee1.AddScore(3);
-employee1.AddScore(0);
-employee1.AddScore(-3);
+employee1.AddBadScore(3);
+employee1.AddBadScore(3);
 
 employee2.AddScore(1);
 employee2.AddScore(1);
-employee2.AddScore(2);
-employee2.AddScore(1);
+employee2.AddBadScore(4);
+employee2.AddBadScore(1);
 employee2.AddScore(1);
 
-employee3.AddScore(4);
-employee3.AddScore(4);
-employee3.AddScore(-3);
-employee3.AddScore(4);
-employee3.AddScore(4);
+employee3.AddScore(0);
+employee3.AddScore(2);
+employee3.AddScore(0);
+employee3.AddBadScore(4);
+employee3.AddBadScore(4);
 
 List<Employee> employees = new List<Employee>();
 {

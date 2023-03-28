@@ -1,6 +1,8 @@
 ﻿
 
 
+using System.Security.Cryptography.X509Certificates;
+
 namespace ChallengeApp
 {
 
@@ -11,6 +13,10 @@ namespace ChallengeApp
         private string v1;
         private string v2;
         private string v3;
+        private List<int> badscore = new List<int>();
+        private string v4;
+        private string v5;
+        private string v6;
 
         public Employee(string name, string surname, int age)
         {
@@ -25,13 +31,15 @@ namespace ChallengeApp
         public string Surname { get; set; }
         public int Age { get; set; }
 
-        public int Result => score.Sum();
-
+        public int Result => score.Sum() - badscore.Sum() ;
+        public int BadScore => badscore.Sum() ;
         public void AddScore(int number)
             
 
         { score.Add(number);  }
+        public void AddBadScore(int number) { badscore.Add(number);}
 
+       
     }
 
 }
