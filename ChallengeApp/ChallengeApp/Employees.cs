@@ -10,13 +10,10 @@ namespace ChallengeApp
     public class Employee
     {
         private List<int> score = new List<int>();
-        private string v1;
-        private string v2;
-        private string v3;
-        private List<int> badscore = new List<int>();
-        private string v4;
-        private string v5;
-        private string v6;
+        
+        private List<int> dockscore = new List<int>();
+        
+
 
         public Employee(string name, string surname, int age)
         {
@@ -31,13 +28,13 @@ namespace ChallengeApp
         public string Surname { get; set; }
         public int Age { get; set; }
 
-        public int Result => score.Sum() - badscore.Sum() ;
-        public int BadScore => badscore.Sum() ;
+        public int Result => score.Sum() - dockscore.Sum() ;
+        public int DockScore => dockscore.Sum() ;
         public void AddScore(int number)
             
 
         { score.Add(number);  }
-        public void AddBadScore(int number) { badscore.Add(number);}
+        public void AddDockScore(int number) { dockscore.Add(number);}
 
        
     }
