@@ -1,18 +1,13 @@
-﻿
-
-
-using System.Security.Cryptography.X509Certificates;
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
 
 
     public class Employee
     {
         private List<int> score = new List<int>();
-        
+
         private List<int> dockscore = new List<int>();
-        
+
 
 
         public Employee(string name, string surname, int age)
@@ -28,15 +23,18 @@ namespace ChallengeApp
         public string Surname { get; set; }
         public int Age { get; set; }
 
-        public int Result => score.Sum() - dockscore.Sum() ;
-        public int DockScore => dockscore.Sum() ;
+        public int Result => score.Sum() - dockscore.Sum();
+        public int DockScore => dockscore.Sum();
         public void AddScore(int number)
-            
+        {
+            score.Add(number); 
+        }
+        public void AddDockScore(int number)
+        
+        {
+            dockscore.Add(number); 
+        }
 
-        { score.Add(number);  }
-        public void AddDockScore(int number) { dockscore.Add(number);}
-
-       
     }
 
 }
