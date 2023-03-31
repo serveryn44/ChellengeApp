@@ -7,14 +7,13 @@ namespace ChallengeApp.Tests
         public void TEST()
         {
             // arrage
-            var employee4 = GetEmployee("Franek", "Kowalski", 55);
-            var employee5 = GetEmployee("Grzegorz", "Nowak", 22);
-
+            var employee1 = GetEmployee("Adam", "Kowalski", 22);
+            var employee2 = GetEmployee("Franek", "Nowak", 45);
             // act
 
 
             // assert
-            Assert.AreEqual(employee4, employee5);
+           Assert.AreNotEqual(employee1, employee2);
         }
         private Employee GetEmployee(string name, string surname, int age)
         {

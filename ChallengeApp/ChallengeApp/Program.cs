@@ -1,33 +1,11 @@
 ﻿using ChallengeApp;
+using System.Reflection.Metadata;
 
-
-Employee employee1 = new Employee("Adam", "Kowalski", 33);
-Employee employee2 = new Employee("Zuzia", "Nowak", 45);
-Employee employee3 = new Employee("Damian", "Iksiński", 22);
-
-
-employee1.AddScore(1);
-employee1.AddScore(3);
-employee1.AddScore(3);
-employee1.AddDockScore(3);
-employee1.AddDockScore(3);
-
-employee2.AddScore(1);
-employee2.AddScore(1);
-employee2.AddDockScore(4);
-employee2.AddDockScore(1);
-employee2.AddScore(1);
-
-employee3.AddScore(10);
-employee3.AddScore(2);
-employee3.AddScore(10);
-employee3.AddDockScore(4);
-employee3.AddDockScore(4);
 
 List<Employee> employees = new List<Employee>();
 {
-    employees.Add(employee1); employees.Add(employee2); employees.Add(employee3);
-}
+
+}    
 
 int maxResult = -1;
 Employee employeeWithMaxResult = null;
