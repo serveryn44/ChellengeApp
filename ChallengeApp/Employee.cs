@@ -3,39 +3,42 @@
 
     public class Employee
     {
-        private List<int> score = new List<int>();
+        private List<float> grades = new List<float>();
+      
 
-        private List<int> dockscore = new List<int>();
-
-        public Employee(string login)
-        {
-            this.Login = login;
-            
-        }
-
-        public Employee(string name, string surname, int age)
+        public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
-            this.Age = age;
-        }
+        }  
 
 
-        public string Login { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public int Age { get; set; }
-
-        public int Result => score.Sum() - dockscore.Sum();
-        public int DockScore => dockscore.Sum();
-        public void AddScore(int number)
+        
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+       
+        
+        public void AddGrade(float grade)
         {
-            score.Add(number);
+            this.grades.Add(grade);
         }
-        public void AddDockScore(int number)
-
+        public Statistics GetStatistics() 
         {
-            dockscore.Add(number);
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+
+            foreach(var grade in this.grades)
+            {
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Min = Math.Min(statistics.Min, grade);
+                statistics.Average += grade;
+            }
+
+            statistics.Average /= this.grades.Count;
+
+            return statistics;
         }
 
     }

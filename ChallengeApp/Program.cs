@@ -1,24 +1,10 @@
 ﻿using ChallengeApp;
 
-
-
-
-List<Employee> employees = new List<Employee>();
-{
-
-}
-
-int maxResult = -1;
-Employee employeeWithMaxResult = null;
-
-foreach (var employee in employees)
-{
-    if (employee.Result > maxResult)
-    {
-        maxResult = employee.Result;
-        employeeWithMaxResult = employee;
-    }
-}
-//Console.WriteLine("Imię: " + employeeWithMaxResult.Name);
-//Console.WriteLine("Nazwisko: " + employeeWithMaxResult.Surname);
-//Console.WriteLine("Liczba zdobytych punktów: " + employeeWithMaxResult.Result);
+var employee = new Employee("Adam", "Kowalski");
+employee.AddGrade(3);
+employee.AddGrade(5);
+employee.AddGrade(8);
+var statistics = employee.GetStatistics();
+Console.WriteLine($"Average:{statistics.Average:N2}");
+Console.WriteLine($"Min:{statistics.Min}");
+Console.WriteLine($"Max:{statistics.Max}");
