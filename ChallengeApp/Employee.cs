@@ -1,23 +1,15 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
+﻿
 namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>();
-        public Employee(string name, string surname)
+        public Employee(string name, string surname, string sex, string age)
+            : base(name, surname, sex, age)
         {
-            this.Name = name;
-            this.Surname = surname;
+           
         }
-        public Employee()
-        {   
-            
-        }
-      
-        
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
+
         public void AddGrade(double grade)
         {
             grade = Math.Round(grade);
@@ -32,17 +24,17 @@ namespace ChallengeApp
             }
             else
             {
-                throw new Exception ("invalid grade value");
+                throw new Exception("invalid grade value");
             }
         }
-        
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
             }
-            else if(char.TryParse(grade, out char letter))
+            else if (char.TryParse(grade, out char letter))
             {
                 this.AddGrade(letter);
             }
@@ -72,12 +64,12 @@ namespace ChallengeApp
                     this.grades.Add(40);
                     break;
                 case 'E':
-                    case 'e':
+                case 'e':
                     this.grades.Add(20);
                     break;
                 default:
                     throw new Exception("Wrong Letter");
-                    
+
 
             }
         }
@@ -98,9 +90,9 @@ namespace ChallengeApp
                 }
                 statistics.Average /= this.grades.Count;
             }
-            
 
-            switch (statistics.Average) 
+
+            switch (statistics.Average)
             {
                 case var average when average >= 80:
                     statistics.AverageLetter = 'A';
@@ -120,7 +112,7 @@ namespace ChallengeApp
             }
             return statistics;
         }
-        
+
     }
 
 }

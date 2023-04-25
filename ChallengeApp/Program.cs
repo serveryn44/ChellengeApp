@@ -1,5 +1,4 @@
 ﻿using ChallengeApp;
-using System;
 
 Console.WriteLine("Witamy w programie XYZ do oceny Pracowników");
 Console.WriteLine("=============================================");
@@ -9,11 +8,11 @@ Console.WriteLine();
 var employee = new Employee();
 
 
-while(true)
-    {
+while (true)
+{
     Console.WriteLine("Podaj kolejną ocenę pracownika");
     var input = Console.ReadLine();
-    if(input == "q")
+    if (input == "q")
     {
         break;
     }
@@ -26,11 +25,11 @@ while(true)
     {
         Console.WriteLine($"Exception catched: {e.Message}");
     }
-    
+
 }
 
 var statistics = employee.GetStatistics();
 Console.WriteLine($"Average {statistics.Average}");
 Console.WriteLine($"Min {statistics.Min}");
 Console.WriteLine($"Max {statistics.Max}");
-Console.WriteLine($"AverageLetter {statistics.AverageLetter}");  
+Console.WriteLine($"AverageLetter {statistics.AverageLetter}");
