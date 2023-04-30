@@ -4,8 +4,8 @@ Console.WriteLine("Witamy w programie XYZ do oceny Pracowników");
 Console.WriteLine("=============================================");
 Console.WriteLine();
 
-
 var employee = new Employee();
+
 
 
 while (true)
@@ -19,6 +19,7 @@ while (true)
 
     try
     {
+        
         employee.AddGrade(input);
     }
     catch (Exception e)
