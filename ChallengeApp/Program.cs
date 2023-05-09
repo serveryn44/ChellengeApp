@@ -6,7 +6,9 @@ Console.WriteLine();
 
 var employee = new EmployeeInFile("Adam", "Kamizelich");
 employee.AddGrade('a');
-
+employee.AddGrade(28.5);
+employee.AddGrade('c');
+employee.AddGrade(150);
 
 //while (true)
 //{

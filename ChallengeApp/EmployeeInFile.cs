@@ -12,7 +12,7 @@
             using (var writer = File.AppendText(fileName))
             {
                 grade = Math.Round(grade);
-                writer.Write(grade);
+                writer.WriteLine(grade);
             }
 
         }
@@ -22,7 +22,7 @@
             using (var writer = File.AppendText(fileName))
                 if (grade >= 0 && grade <= 100)
                 {
-                    writer.Write(grade);
+                    writer.WriteLine(grade);
                 }
                 else
                 {
@@ -36,11 +36,11 @@
 
                 if (float.TryParse(grade, out float result))
                 {
-                    writer.Write(grade);
+                    writer.WriteLine(grade);
                 }
                 else if (char.TryParse(grade, out char letter))
                 {
-                    writer.Write(letter);
+                    writer.WriteLine(letter);
                 }
                 else
                 {
@@ -53,7 +53,7 @@
         {
             using (var writer = File.AppendText(fileName))
             {
-                writer.Write(grade);
+                writer.WriteLine(grade);
             }
         }
 
@@ -65,23 +65,23 @@
                 {
                     case 'A':
                     case 'a':
-                        writer.Write(100);
+                        writer.WriteLine(100);
                         break;
                     case 'B':
                     case 'b':
-                        writer.Write(80);
+                        writer.WriteLine(80);
                         break;
                     case 'C':
                     case 'c':
-                        writer.Write(60);
+                        writer.WriteLine(60);
                         break;
                     case 'D':
                     case 'd':
-                        writer.Write(40);
+                        writer.WriteLine(40);
                         break;
                     case 'E':
                     case 'e':
-                        writer.Write(20);
+                        writer.WriteLine(20);
                         break;
                     default:
                         throw new Exception("Wrong Letter");
