@@ -20,7 +20,7 @@ namespace ChallengeApp.Test
         {
             //arrange
             float number1 = 01224f;
-            float number2 = 01222f; 
+            float number2 = 01222f;
 
             //assert
             Assert.AreNotEqual(number1, number2);
@@ -37,20 +37,6 @@ namespace ChallengeApp.Test
             Assert.AreEqual(number1, number2);
 
         }
-        [Test]
-        public void GetEmployeeShouldDifferentObject()
-        {
-            //arrange
-            var employee1 = GetEmployee("Damian");
-            var employee2 = GetEmployee("Darek");
 
-            //assert
-            Assert.AreNotEqual(employee1, employee2);
-       
-        }
-        private Employee GetEmployee(string login)
-        {
-            return new Employee(login);
-        }
     }
 }

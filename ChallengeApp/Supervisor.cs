@@ -3,7 +3,7 @@ namespace ChallengeApp
 {
     public class Supervisor : IEmployee
     {
-         
+
         private List<float> grades = new List<float>();
         public Supervisor() { }
         public Supervisor(string name, string surname)
@@ -41,7 +41,7 @@ namespace ChallengeApp
 
         public void AddGrade(string grade)
         {
-                                   
+
             switch (grade)
             {
                 case "6":
@@ -77,7 +77,7 @@ namespace ChallengeApp
                 case "3+":
                     this.grades.Add(45);
                     break;
-                     case "3":
+                case "3":
                     this.grades.Add(40);
                     break;
                 case "-3":
@@ -123,11 +123,11 @@ namespace ChallengeApp
                 }
                 statistics.Average /= this.grades.Count;
             }
-          
+
             return statistics;
         }
 
     }
 
 }
-    
+

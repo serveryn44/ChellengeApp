@@ -61,7 +61,7 @@ namespace ChallengeApp.Test
             employee.AddGrade('A');
             employee.AddGrade('A');
             employee.AddGrade('e');
-           
+
             //assert
             var statistics = employee.GetStatistics();
             var result = statistics.AverageLetter;
@@ -80,7 +80,7 @@ namespace ChallengeApp.Test
             var result = statistics.Max;
             //assert
             Assert.AreEqual(result, 100);
-          
+
         }
         [Test]
         public void EmployeeWhenAddCharBGradeIsCorectTest()
@@ -92,8 +92,8 @@ namespace ChallengeApp.Test
             var statistics = employee.GetStatistics();
             var result = statistics.Max;
             //assert
-            Assert.AreEqual(result, 80);    
-            
+            Assert.AreEqual(result, 80);
+
         }
         [Test]
         public void EmployeeWhenAddCharCGradeIsCorectTest()
@@ -145,5 +145,5 @@ namespace ChallengeApp.Test
             Assert.AreEqual(result, 20);
 
         }
-    }  
+    }
 }
