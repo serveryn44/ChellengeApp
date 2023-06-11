@@ -4,6 +4,15 @@ namespace ChallengeApp
 {
     public abstract class EmployeeBase : IEmployee
     {
+        public delegate void GradesAddedDelegate(object sender, EventArgs args);
+
+        public abstract event GradesAddedDelegate GradesAdded;
+        void GradeAdded(object sender, EventArgs args)
+        {
+            Console.WriteLine("Dodano nową ocenę");
+        }
+
+
         public EmployeeBase(string name, string surname)
 
         {
@@ -26,7 +35,7 @@ namespace ChallengeApp
         public abstract void AddGrade(char grade);
 
         public abstract Statistics GetStatistics();
-       
 
+       
     }
 }

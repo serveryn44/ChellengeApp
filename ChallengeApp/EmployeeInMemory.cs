@@ -3,12 +3,17 @@ namespace ChallengeApp
 {
     internal class EmployeeInMemory : EmployeeBase
     {
-
+                
         private List<float> grades = new List<float>();
+
+        public override event GradesAddedDelegate GradesAdded;
+       
+
         public EmployeeInMemory(string name, string surname) : base(name, surname)
         {
+            
         }
-
+               
         public override void AddGrade(double grade)
         {
             {
@@ -22,6 +27,10 @@ namespace ChallengeApp
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
+                if (GradesAdded != null)
+                {
+                    GradesAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -38,6 +47,10 @@ namespace ChallengeApp
             else if (char.TryParse(grade, out char letter))
             {
                 this.AddGrade(letter);
+                if (GradesAdded != null)
+                {
+                    GradesAdded(this, new EventArgs());
+                }
             }
             else
             {

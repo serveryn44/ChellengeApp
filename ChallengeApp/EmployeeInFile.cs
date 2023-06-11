@@ -1,11 +1,17 @@
 ﻿namespace ChallengeApp
 {
     public class EmployeeInFile : EmployeeBase
+        
     {
+    
         private const string fileName = "grades.txt";
+        public override event GradesAddedDelegate GradesAdded;
+
+
         public EmployeeInFile(string name, string surname) : base(name, surname)
         {
         }
+
 
         public override void AddGrade(double grade)
         {
@@ -13,8 +19,8 @@
             {
                 grade = Math.Round(grade);
                 writer.WriteLine(grade);
+                
             }
-
         }
 
         public override void AddGrade(float grade)
@@ -23,6 +29,10 @@
                 if (grade >= 0 && grade <= 100)
                 {
                     writer.WriteLine(grade);
+                    if (GradesAdded != null)
+                    {
+                        GradesAdded(this, new EventArgs());
+                    }
                 }
                 else
                 {
@@ -41,6 +51,10 @@
                 else if (char.TryParse(grade, out char letter))
                 {
                     writer.WriteLine(letter);
+                    if (GradesAdded != null)
+                    {
+                        GradesAdded(this, new EventArgs());
+                    }
                 }
                 else
                 {
@@ -97,8 +111,6 @@
             return results;
         }
 
-      
-
         private List<float> ReadGradesFromFile()
         {
             var grades = new List<float>();
@@ -111,14 +123,14 @@
                     while (line != null)
                     {
                         var number = float.Parse(line);
-                        grades.Add(number);
+                        grades.Add(number);         
                         line = reader.ReadLine();
                     }
                 }
             }
             return grades;
         }
-        private Statistics CountStatistics(List<float> grades )
+        private Statistics CountStatistics(List<float> grades)
         {
             var statistics = new Statistics();
             statistics.Average = 0;

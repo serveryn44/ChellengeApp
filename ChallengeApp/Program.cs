@@ -1,38 +1,46 @@
-﻿using ChallengeApp;
+﻿
+
+using ChallengeApp;
 
 Console.WriteLine("Witamy w programie XYZ do oceny Pracowników");
 Console.WriteLine("=============================================");
 Console.WriteLine();
 
-var employee = new EmployeeInFile("Adam", "Kamizelich");
-employee.AddGrade('a');
-employee.AddGrade(28.5);
-employee.AddGrade('c');
-employee.AddGrade(150);
+var employee = new EmployeeInMemory("Adam", "Kamizelich");
 
-//while (true)
-//{
-//    console.writeline("podaj kolejną ocenę pracownika");
-//    var input = console.readline();
-//    if (input == "q")
-//    {
-//        break;
-//    }
+employee.GradesAdded += Employee_GradesAdded;
 
-//    try
-//    {
+void Employee_GradesAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano nową ocenę");
+}
 
-//        employee.addgrade(input);
-//    }
-//    catch (exception e)
-//    {
-//        console.writeline($"exception catched: {e.message}");
-//    }
+employee.AddGrade(0.6f);
 
-//}
+while (true) 
+{ 
+    
+    Console.WriteLine("podaj kolejną ocenę pracownika");
+    var input = Console.ReadLine();
+    if (input == "q")
+    {
+        break;
+    }
 
-//var statistics = employee.getstatistics();
-//console.writeline($"average {statistics.average}");
-//console.writeline($"min {statistics.min}");
-//console.writeline($"max {statistics.max}");
-//console.writeline($"averageletter {statistics.averageletter}");
+    try
+    {
+
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"exception catched: {e.Message}");
+    }
+
+}
+
+var statistics = employee.GetStatistics();
+Console.WriteLine($"average {statistics.Average}");
+Console.WriteLine($"min {statistics.Min}");
+Console.WriteLine($"max {statistics.Max}");
+Console.WriteLine($"averageletter {statistics.AverageLetter}");
